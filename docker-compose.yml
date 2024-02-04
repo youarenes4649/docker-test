@@ -1,0 +1,21 @@
+version: "3"
+
+# 作成したいサービスをあげる
+services: 
+  sam-local: 
+    image: python
+    # dockerfileがあるディレクトリへの相対パス
+    build:
+      context: ./docker-python-test
+    container_name: sam-local
+    # コンテナを持続させたい時
+    tty: true
+    # ホスト側のフォルダをコンテナにマウントc
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - $PWD:$PWD
+      - ~/.aws/:/root/.aws
+    working_dir: $PWD
+    # ホストマシンのポート番号:コンテナのポート番号
+    ports:
+      - 8888:8888
