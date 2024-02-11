@@ -30,6 +30,16 @@ sam local invoke
 
 ```
 
+## ディレクトリ構成図
+```
+.
+└── docker-test(作業ディレクトリ)
+    ├── README.md
+    ├── docker-compose.yml
+    └── docker-python-test
+        └── Dockerfile
+
+```
 ## 勉強になったこと
 
 
